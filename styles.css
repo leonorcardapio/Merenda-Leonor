@@ -745,44 +745,45 @@ textarea {
   }
 
   .table-wrapper {
-    overflow-x: hidden;
+    overflow: visible;
   }
 
   table {
+    width: 100%;
     min-width: 0;
     table-layout: fixed;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
   }
 
   th,
   td {
-    padding: 8px 5px;
-    overflow-wrap: anywhere;
+    padding: 8px 4px;
+    overflow-wrap: break-word;
   }
 
   th {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   th:nth-child(1),
   td:nth-child(1) {
-    width: 24%;
+    width: 20%;
   }
 
   th:nth-child(2),
   td:nth-child(2) {
-    width: 25%;
+    width: 26%;
   }
 
   th:nth-child(3),
   td:nth-child(3) {
-    width: 30%;
+    width: 29%;
   }
 
   th:nth-child(4),
   td:nth-child(4) {
-    width: 21%;
+    width: 25%;
   }
 
   .section-title h2 {
