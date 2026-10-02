@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merenda Leonor</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo" aria-label="Logo do site">
+        <img class="logo-icon" src="img/logo.png" alt="Logo LR" />
+        <span>Merenda Leonor</span>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#dicas">Dicas</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#sugestoes">Sugestões</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-content">
+          <div class="tag">🍽️ ALIMENTAÇÃO ESCOLAR</div>
+          <h1>Uma boa alimentação começa na escola.</h1>
+          <p>
+            Confira o cardápio da semana, veja dicas para o dia a dia e envie
+            sugestões para melhorar a alimentação escolar.
+          </p>
+          <a href="#cardapio" class="button">Ver cardápio →</a>
+        </div>
+      </section>
+
+      <section id="cardapio" class="section">
+        <div class="section-title">
+          <h2>Cardápio da semana</h2>
+          <p>Confira as refeições preparadas para cada dia da semana.</p>
+        </div>
+
+        <div class="menu-status-bar">
+          <p id="menu-status" class="menu-status" role="status" aria-live="polite">
+            O cardápio aparecerá aqui quando a planilha for atualizada.
+          </p>
+          <button type="button" id="atualizar-cardapio" class="menu-refresh-button" hidden>
+            Atualizar cardápio
+          </button>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Dia</th>
+                <th>Prato principal</th>
+                <th>Acompanhamento</th>
+                <th>Sobremesa</th>
+              </tr>
+            </thead>
+            <tbody id="menu-semanal"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="tips-suggestions-layout">
+        <section id="dicas" class="section section-alt tips-panel">
+          <div class="section-title">
+            <h2>Dicas de alimentação</h2>
+            <p>Atitudes simples ajudam a manter a higiene e a boa convivência na hora da refeição.</p>
+          </div>
+
+          <div class="tips-grid">
+            <div class="tip-item">
+              <div class="tip-icon">🍽️</div>
+              <p>Depois de comer, leve seu prato até o local indicado.</p>
+            </div>
+
+            <div class="tip-item">
+              <div class="tip-icon">💧</div>
+              <p>Beba água ao longo do dia para manter o corpo hidratado.</p>
+            </div>
+
+            <div class="tip-item">
+              <div class="tip-icon">🧼</div>
+              <p>Lave bem as mãos antes das refeições.</p>
+            </div>
+
+            <div class="tip-item">
+              <div class="tip-icon">🚶</div>
+              <p>Respeite a fila e aguarde a sua vez.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="sugestoes" class="section section-review">
+          <div class="review-box">
+            <h2>Envie sua sugestão</h2>
+            <p class="subtitle">
+              Sua ideia ajuda a melhorar a alimentação escolar.
+            </p>
+
+            <form id="formSugestao">
+              <div class="field">
+                <label for="texto-sugestao">Sua sugestão</label>
+                <textarea
+                  id="texto-sugestao"
+                  placeholder="Escreva sua sugestão para o cardápio..."
+                  maxlength="2000"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="button-submit">Enviar por e-mail</button>
+              <p id="mensagem-sugestao" class="form-message" aria-live="polite">
+                O Gmail será aberto com sua sugestão pronta. Revise a mensagem e clique em Enviar.
+              </p>
+              <a
+                id="link-email-sugestao"
+                class="email-fallback"
+                target="_blank"
+                rel="noopener noreferrer"
+                hidden
+              >
+                Se o Gmail não abrir, tente pelo aplicativo de e-mail.
+              </a>
+            </form>
+          </div>
+        </section>
+      </div>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand" id="sobre">
+          <div class="footer-brand-heading">
+            <img class="footer-logo" src="img/logo.png" alt="Logo LR" />
+            <h3>Merenda Leonor</h3>
+          </div>
+          <p>
+            Este projeto consiste no desenvolvimento de um site destinado à
+            apresentação do cardápio escolar, elaborado por um grupo de alunos
+            da turma 3º A.
+          </p>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contatos</h4>
+          <ul>
+            <li>
+              E-mail:
+              <a href="mailto:leonorcardapio@gmail.com">leonorcardapio@gmail.com</a>
+            </li>
+            <li>
+              Telefone: 
+              <a href="tel:(11) 2546-7799">(11) 2546-7799</a>
+            </li>
+            <li>
+            Instagram:
+              <a href="https://www.instagram.com/leonor_rendesi/" target="_blank" rel="noopener noreferrer">
+                @leonor_rendesi
+              </a>
+            </li>
+            <li>
+              Endereço:
+              <a href="https://maps.google.com/?q=Rua+Boaventura+Rodrigues+da+Silva,+1000+-+Parque+Boturussu,+São+Paulo+-+SP" target="_blank" rel="noopener noreferrer">
+                Rua Boaventura Rodrigues da Silva, 1000 – Parque Boturussu, São Paulo – SP
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-developers">
+          <h4>Desenvolvedores</h4>
+          <p class="footer-role">Líderes</p>
+          <ul class="footer-team-list">
+            <li>Nathan Rocha</li>
+            <li>Kaique Hiro</li>
+          </ul>
+          <p class="footer-role">Equipe</p>
+          <ul class="footer-team-list">
+            <li>Kauã Alves</li>
+            <li>Crystian</li>
+            <li>Izabela</li>
+            <li>Larissa</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© Merenda Leonor</span>
+      </div>
+    </footer>
+
+    <script src="cardapio-config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
