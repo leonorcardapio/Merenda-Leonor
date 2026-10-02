@@ -624,6 +624,11 @@ textarea {
 }
 
 @media (max-width: 750px) {
+  #cardapio.section {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
   .site-header {
     height: auto;
     padding: 15px 20px;
