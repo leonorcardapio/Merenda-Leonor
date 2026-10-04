@@ -2,7 +2,9 @@ const menuStatus = document.getElementById('menu-status');
 const refreshMenuButton = document.getElementById('atualizar-cardapio');
 const menuTableBody = document.getElementById('menu-semanal');
 const siteHeader = document.querySelector('.site-header');
+const heroFoodImage = document.getElementById('hero-food-image');
 let menuRefreshInProgress = false;
+let bannerRefreshInProgress = false;
 const weekdays = [
   'Segunda-feira',
   'Terça-feira',
@@ -39,6 +41,62 @@ function updateHeaderOnScroll() {
 
 window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
 updateHeaderOnScroll();
+
+async function refreshAnnouncementBanner() {
+  const documentUrl = window.BANNER_DOC_URL;
+
+  if (!documentUrl || bannerRefreshInProgress) {
+    return;
+  }
+
+  bannerRefreshInProgress = true;
+
+  try {
+    const requestUrl = new URL(documentUrl);
+    requestUrl.searchParams.set('_', Date.now().toString());
+    const response = await fetch(requestUrl, { cache: 'no-store' });
+
+    if (!response.ok) {
+      throw new Error(`O Google Docs respondeu com HTTP ${response.status}.`);
+    }
+
+    const documentHtml = await response.text();
+    const exportedDocument = new DOMParser().parseFromString(
+      documentHtml,
+      'text/html',
+    );
+    const imageSource = exportedDocument.body
+      .querySelector('img[src^="data:image/"]')
+      ?.getAttribute('src');
+
+    if (!imageSource) {
+      heroFoodImage.removeAttribute('src');
+      heroFoodImage.parentElement.hidden = true;
+      document.querySelector('.hero').classList.remove('has-image');
+      return;
+    }
+
+    heroFoodImage.onload = () => {
+      heroFoodImage.parentElement.hidden = false;
+      document.querySelector('.hero').classList.add('has-image');
+    };
+    heroFoodImage.onerror = () => {
+      console.error('Não foi possível carregar a imagem do Google Docs.');
+      heroFoodImage.removeAttribute('src');
+      heroFoodImage.parentElement.hidden = true;
+      document.querySelector('.hero').classList.remove('has-image');
+    };
+    heroFoodImage.src = imageSource;
+    if (heroFoodImage.complete && heroFoodImage.naturalWidth) {
+      heroFoodImage.parentElement.hidden = false;
+      document.querySelector('.hero').classList.add('has-image');
+    }
+  } catch (error) {
+    console.error('Erro ao atualizar a faixa pelo Google Docs:', error);
+  } finally {
+    bannerRefreshInProgress = false;
+  }
+}
 
 function parseCsv(csvText) {
   const rows = [];
@@ -204,7 +262,7 @@ async function refreshMenu() {
 
     const menu = validateMenuCsv(await response.text());
     renderMenu(menu);
-    menuStatus.textContent = 'Cardápio atualizado pela planilha Google.';
+    menuStatus.textContent = 'Cardápio atualizado.';
   } catch (error) {
     menuStatus.textContent =
       'Não foi possível atualizar pela planilha. Confira o link CSV e se ela foi publicada para leitura.';
@@ -224,6 +282,15 @@ if (window.CARDAPIO_CSV_URL.trim()) {
       refreshMenu();
     }
   }, 10 * 1000);
+}
+
+if (window.BANNER_DOC_URL) {
+  refreshAnnouncementBanner();
+  window.setInterval(() => {
+    if (!document.hidden) {
+      refreshAnnouncementBanner();
+    }
+  }, 60 * 1000);
 }
 
 refreshMenuButton.addEventListener('click', refreshMenu);
