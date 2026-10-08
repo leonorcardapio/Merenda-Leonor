@@ -662,12 +662,24 @@ textarea {
   margin: 40px auto 0;
   padding-top: 18px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
   color: rgba(255, 255, 255, 0.58);
   font-size: 12px;
+}
+
+.footer-bottom a {
+  font: 400 12px/1.5 Arial, Helvetica, sans-serif;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 750px) {
