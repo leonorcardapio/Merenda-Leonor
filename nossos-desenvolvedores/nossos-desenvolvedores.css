@@ -1,0 +1,137 @@
+.developers-page h1 {
+  font-size: clamp(30px, 4vw, 40px);
+}
+
+.developer-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.developer-list li {
+  position: relative;
+  min-height: 150px;
+  padding: 14px 16px 14px 132px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background: var(--white);
+}
+
+.developer-list li::after {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 100px;
+  height: 120px;
+  border: 1px dashed #777;
+  border-radius: 6px;
+  content: "";
+}
+
+.developer-list li p {
+  margin: 8px 0 0;
+}
+
+.info-page-header {
+  position: static;
+}
+
+body {
+  background-color: #f8f5ee;
+}
+
+.developers-page {
+  max-width: 900px;
+  min-height: 65vh;
+  margin: 40px auto;
+  padding: 64px 72px;
+  border: 1px solid #e5e5e5;
+  background-color: var(--white);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  text-align: left;
+}
+
+.developers-page h1 {
+  margin-bottom: 8px;
+  color: #000;
+  text-align: left;
+}
+
+.developers-page h2 {
+  margin: 24px 0 8px;
+  padding: 0;
+  border: 0;
+  color: #000;
+  font-size: 20px;
+  text-align: left;
+}
+
+.developers-page p,
+.developers-page li {
+  color: #000;
+  line-height: 1.7;
+}
+
+.developers-page p {
+  margin-right: 0;
+  margin-left: 0;
+  text-align: left;
+}
+
+.developers-page > h1,
+.developers-page > p {
+  text-align: center;
+}
+
+.developers-page > p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.developers-page p + p {
+  margin-top: 14px;
+}
+
+.developers-page ul:not(.developer-list) {
+  margin: 12px 0 0 22px;
+}
+
+.developers-page a {
+  color: #000;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 520px) {
+  .developer-list {
+    grid-template-columns: 1fr;
+  }
+
+  .developer-list li {
+    min-height: 122px;
+    padding-left: 98px;
+  }
+
+  .developer-list li::after {
+    width: 68px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 750px) {
+  .developers-page {
+    min-height: 42vh;
+    margin: 24px 16px;
+    padding: 44px 25px;
+  }
+
+  .developers-page > p {
+    width: calc(100% + 50px);
+    margin-left: -25px;
+    font-size: clamp(10px, 2.8vw, 14px);
+    text-align: center;
+    white-space: nowrap;
+  }
+}
