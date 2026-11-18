@@ -13,22 +13,35 @@
 
 .developer-list li {
   position: relative;
-  min-height: 150px;
-  padding: 14px 16px 14px 132px;
+  min-height: 170px;
+  padding: 14px 16px 14px 150px;
   border: 1px solid #555;
   border-radius: 6px;
   background: var(--white);
 }
 
-.developer-list li::after {
+.developer-photo,
+.developer-photo-placeholder {
   position: absolute;
   top: 14px;
   left: 14px;
-  width: 100px;
-  height: 120px;
-  border: 1px dashed #777;
+  width: 118px;
+  height: 142px;
   border-radius: 6px;
-  content: "";
+  object-fit: cover;
+  object-position: center;
+}
+
+.developer-photo {
+  border: 1px solid #ccc;
+}
+
+.developer-photo-placeholder {
+  display: grid;
+  place-items: center;
+  border: 1px dashed #777;
+  color: #777;
+  font-size: 14px;
 }
 
 .developer-list li p {
@@ -110,13 +123,14 @@ body {
   }
 
   .developer-list li {
-    min-height: 122px;
-    padding-left: 98px;
+    min-height: 132px;
+    padding-left: 108px;
   }
 
-  .developer-list li::after {
-    width: 68px;
-    height: 90px;
+  .developer-photo,
+  .developer-photo-placeholder {
+    width: 78px;
+    height: 104px;
   }
 }
 
