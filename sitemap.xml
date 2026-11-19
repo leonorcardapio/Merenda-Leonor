@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://sitemaps.org">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://publicvm.com</loc>
-    <lastmod>2026-11-18</lastmod>
-    <priority>1.0</priority>
+    <loc>https://www.merendaleonor.publicvm.com/</loc>
+    <lastmod>2026-11-19T05:13:52+00:00</lastmod>
+    <priority>1.0000</priority>
   </url>
   <url>
-    <loc>https://publicvm.compolitica-privacidade/politica-privacidade.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <priority>0.8</priority>
+    <loc>https://www.merendaleonor.publicvm.com/politica-privacidade/politica-privacidade.html</loc>
+    <lastmod>2026-11-19T05:13:52+00:00</lastmod>
+    <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://publicvm.comtermos-de-uso/termos-de-uso.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <priority>0.8</priority>
+    <loc>https://www.merendaleonor.publicvm.com/termos-de-uso/termos-de-uso.html</loc>
+    <lastmod>2026-11-19T05:13:52+00:00</lastmod>
+    <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://publicvm.comsobre-nos/sobre-nos.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <priority>0.8</priority>
+    <loc>https://www.merendaleonor.publicvm.com/sobre-nos/sobre-nos.html</loc>
+    <lastmod>2026-11-19T05:13:52+00:00</lastmod>
+    <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://publicvm.comnossos-desenvolvedores/nossos-desenvolvedores.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <priority>0.8</priority>
+    <loc>https://www.merendaleonor.publicvm.com/nossos-desenvolvedores/nossos-desenvolvedores.html</loc>
+    <lastmod>2026-11-19T05:13:52+00:00</lastmod>
+    <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://publicvm.comcentral-de-ajuda/central-de-ajuda.html</loc>
-    <lastmod>2026-11-18</lastmod>
-    <priority>0.8</priority>
+    <loc>https://www.merendaleonor.publicvm.com/central-de-ajuda/central-de-ajuda.html</loc>
+    <lastmod>2026-11-19T05:13:52+00:00</lastmod>
+    <priority>0.8000</priority>
   </url>
 </urlset>
